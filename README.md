@@ -102,3 +102,9 @@ and finally open `.bashrc` and type
 Reboot
 
     sudo snap install spotify
+
+#### Setting Alias
+
+    alias quarks='sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
+    alias gs="cd Desktop/coding/SimpleMC/"
+    alias mp="module load mpi/openmpi-x86_64"
