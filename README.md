@@ -51,7 +51,7 @@ See: <https://code.visualstudio.com/docs/setup/linux>
 
 See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/>
 
-### Installing Fonts
+### Installing fonts
 
 Install the fonts via these commands
 
@@ -65,12 +65,12 @@ See: <https://ohmyposh.dev/docs/installation/linux>
 
 for installation if necessary
 
-#### Download Oh My Posh
+#### Downloading Oh My Posh
 
     sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
     sudo chmod +x /usr/local/bin/oh-my-posh
 
-#### Download the Themes
+#### Downloading the Themes
 
     mkdir ~/.poshthemes
     wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
@@ -83,3 +83,22 @@ You can look at the themes via: <https://ohmyposh.dev/docs/themes>
 and finally open `.bashrc` and type
 
     eval "$(oh-my-posh init bash --config ~/.poshthemes/jblab_2021.omp.json)"
+
+### Installing pip and python packages
+
+    python3 -m ensurepip --default-pip
+    python3 -m pip install --upgrade pip setuptools wheel
+    python3 -m pip install numpy
+    python3 -m pip install scipy
+    python3 -m pip install matplotlib
+    python3 -m pip install pandas
+    python3 -m pip install sklearn
+    python3 -m pip install jupyterlab
+
+### Installing Spotify
+
+    sudo dnf install snapd
+
+Reboot
+
+    sudo snap install spotify
