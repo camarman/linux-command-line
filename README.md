@@ -4,7 +4,7 @@ Fedora Installation Guide, Including special tweaks and settings
 
 ## Pre-Installation
 
-0) Make sure that fast-start and secure boot is disabled
+0) Make sure that fast start up and secure boot is disabled
 1) Install Fedora to USB (via Fedora Media Writer)
 2) :exclamation: **Do not select delete after download in fedora media writer** :exclamation:
 
