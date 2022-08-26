@@ -2,36 +2,36 @@
 
 Fedora Installation Guide, Including special tweaks and settings
 
-## Installing Fedora
-
-### PART 1 (Pre - Installation)
+## Pre-Installation
 
 1) Install Fedora to USB (via Fedora Media Writer)
 2) :exclamation: **Do not select delete after download in fedora media writer** :exclamation:
 
-### PART 2 (Booting)
+## Installation
+
+### PART 1 (Booting)
 
 1) Adjust the boot option from the UEFI menu
 
-### PART 3 (Live USB - Installation)
+### PART 2 (Live USB - Adjusting Partitions)
 
 1) Download gparted
 
     sudo dnf install gparted
 
 2) Delete all *ext4* and the main partition
-3) **:bangbang: DO NOT DELETE EFI :bangbang:**
+3) :bangbang: **DO NOT DELETE EFI** :bangbang:
 4) Install Fedora to hard drive
 5) Reboot
 
-### PART 4
+### PART 3 (System Updates)
 
 1) `sudo dnf upgrade`
 2) Wait 10 minutes
 3) Reboot
 4) Switch to Xorg
 
-### PART 5 (Enabling Nvidia)
+### PART 4 (Enabling Nvidia)
 
 1) Enable [RPM Repos](https://rpmfusion.org/Configuration)
 2) Enable Multimedia post-install
@@ -41,15 +41,15 @@ Fedora Installation Guide, Including special tweaks and settings
 6) Enable Cuda
 7) Final Reboot
 
-## Post - Installing Fedora
+## Post-Installation
 
 ### Installing VSCode
 
-See: https://code.visualstudio.com/docs/setup/linux
+See: <https://code.visualstudio.com/docs/setup/linux>
 
 ### Installing Chrome
 
-See: https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/
+See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/>
 
 ### Installing Fonts
 
@@ -61,7 +61,7 @@ Install the fonts via these commands
 
 ### Installing Oh My Posh
 
-See: https://ohmyposh.dev/docs/installation/linux
+See: <https://ohmyposh.dev/docs/installation/linux>
 
 for installation if necessary
 
@@ -78,7 +78,7 @@ for installation if necessary
     chmod u+rw ~/.poshthemes/*.omp.*
     rm ~/.poshthemes/themes.zip
 
-You can look at the themes via: https://ohmyposh.dev/docs/themes
+You can look at the themes via: <https://ohmyposh.dev/docs/themes>
 
 and finally open `.bashrc` and type
 
