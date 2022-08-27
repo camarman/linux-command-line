@@ -22,27 +22,38 @@ Fedora Installation Guide, Including special tweaks and settings
 
 2) Delete all *ext4* and the main partition
 3) :bangbang: **DO NOT DELETE EFI** :bangbang:
-4) Install Fedora to hard drive
-5) Reboot
+4) Reboot (Optional)
+5) Install Fedora to hard drive
+6) Reboot
 
 ### PART 3 (System Updates)
 
-1) `sudo dnf upgrade`
-2) Wait 10 minutes
-3) Reboot
-4) Switch to Xorg
+1) Set up username-password
+2) Reboot
+3) Switch to Xorg
+4) `sudo dnf upgrade`
+5) Wait 10 minutes
+6) Reboot
+7) Switch to Xorg
 
 ### PART 4 (Enabling Nvidia)
 
 1) Enable [RPM Repos](https://rpmfusion.org/Configuration)
-2) Enable Multimedia post-install
-3) Download [Nvidia](https://rpmfusion.org/Howto/NVIDIA)
-4) Wait 10 minutes
-5) Reboot
-6) Enable Cuda
-7) Final Reboot
+2) Reboot
+3) `sudo dnf upgrade --refresh`
+4) Download [Nvidia](https://rpmfusion.org/Howto/NVIDIA)
+5) Wait 10 minutes
+6) 
+7) Reboot
+8) Enable Cuda Support
+9) Wait 10 minutes
+10) Final Reboot
 
 ## Post-Installation
+
+### Installing Multimedia post-install
+
+See: <https://rpmfusion.org/Configuration>
 
 ### Installing VSCode
 
