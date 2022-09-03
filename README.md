@@ -4,7 +4,7 @@ Fedora Installation Guide, Including special tweaks and settings
 
 ## Pre-Installation
 
-0) Make sure that fast start up and secure boot is disabled
+0) Make sure that fast start up and secure boot is disabled (For Nvidia Drivers. It might be different for AMD)
 1) Install Fedora to USB (via Fedora Media Writer)
 2) :exclamation: **Do not select delete after download in fedora media writer** :exclamation:
 
@@ -43,7 +43,10 @@ Fedora Installation Guide, Including special tweaks and settings
 3) `sudo dnf upgrade --refresh`
 4) Download [Nvidia](https://rpmfusion.org/Howto/NVIDIA)
 5) Wait 10 minutes
-6) 
+6) Check if the drivers are installed
+
+        modinfo -F version nvidia
+
 7) Reboot
 8) Enable Cuda Support
 9) Wait 10 minutes
@@ -51,7 +54,7 @@ Fedora Installation Guide, Including special tweaks and settings
 
 ## Post-Installation
 
-### Installing Multimedia post-install
+### Installing Multimedia Support
 
 See: <https://rpmfusion.org/Configuration>
 
@@ -59,11 +62,16 @@ See: <https://rpmfusion.org/Configuration>
 
 See: <https://code.visualstudio.com/docs/setup/linux>
 
+#### Linking Github and VSCode
+
+    git config --global user.name "seVenVo1d"
+    git config --global user.email "arman-cam@windowslive.com"
+
 ### Installing Chrome
 
 See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/>
 
-### Installing fonts
+### Installing Fonts
 
 Install the fonts via these commands
 
@@ -120,3 +128,13 @@ Reboot
     alias quarks='sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
     alias gs="cd Desktop/coding/SimpleMC/"
     alias mp="module load mpi/openmpi-x86_64"
+
+### Installing Latex Fonts
+
+See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
+
+    sudo dnf install texlive-scheme-full
+
+### Installing Gnome Tweaks
+
+    sudo dnf install gnome-tweaks
