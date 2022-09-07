@@ -117,6 +117,8 @@ and finally open `.bashrc` and type
 
 ### Installing Spotify
 
+See: <https://snapcraft.io/spotify>
+
     sudo dnf install snapd
 
 Reboot
@@ -138,3 +140,9 @@ See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
 ### Installing Gnome Tweaks
 
     sudo dnf install gnome-tweaks
+
+### Installing Steam and Enabling Steam Proton for gaming
+
+    sudo dnf install steam
+
+In order to enable Steam Poroton enable `Steam -> Settings -> Steam Play` and toggle the option `Enable Steam Play for Supported Titles`.
