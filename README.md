@@ -6,7 +6,7 @@ Fedora Installation Guide, Including special tweaks and settings
 
 0) Make sure that fast start up and secure boot is disabled (For Nvidia Drivers. It might be different for AMD)
 1) Install Fedora to USB (via Fedora Media Writer)
-2) :exclamation: **Do not select delete after download in fedora media writer** :exclamation:
+2) :exclamation: **Do not select "delete after download" in Fedora Media Writer** :exclamation:
 
 ## Installation
 
@@ -18,9 +18,9 @@ Fedora Installation Guide, Including special tweaks and settings
 
 1) Download gparted
 
-    sudo dnf install gparted
+        sudo dnf install gparted
 
-2) Delete all *ext4* and the main partition
+2) Delete **ext4** and the main partition
 3) :bangbang: **DO NOT DELETE EFI** :bangbang:
 4) Reboot (Optional)
 5) Install Fedora to hard drive
@@ -30,33 +30,36 @@ Fedora Installation Guide, Including special tweaks and settings
 
 1) Set up username-password
 2) Reboot
-3) Switch to Xorg
-4) `sudo dnf upgrade`
+3) Switch to **Xorg**
+4) Update your system
+
+        sudo dnf upgrade
 5) Wait 10 minutes
 6) Reboot
-7) Switch to Xorg
+7) Switch to **Xorg**
 
 ### PART 4 (Enabling Nvidia)
 
 1) Enable [RPM Repos](https://rpmfusion.org/Configuration)
-2) Reboot
-3) `sudo dnf upgrade --refresh`
-4) Download [Nvidia](https://rpmfusion.org/Howto/NVIDIA)
+2) Update your system
+
+        sudo dnf upgrade --refresh
+3) Reboot
+4) Download [Nvidia and Cuda Support](https://rpmfusion.org/Howto/NVIDIA)
 5) Wait 10 minutes
 6) Check if the drivers are installed
 
         modinfo -F version nvidia
+7) Final Reboot
 
-7) Reboot
-8) Enable Cuda Support
-9) Wait 10 minutes
-10) Final Reboot
-
-## Post-Installation
+## Post-Installation (Essential)
 
 ### Installing Multimedia Support
 
 See: <https://rpmfusion.org/Configuration>
+
+        sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+        sudo dnf groupupdate sound-and-video
 
 ### Installing VSCode
 
@@ -145,4 +148,4 @@ See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
 
     sudo dnf install steam
 
-In order to enable Steam Poroton enable `Steam -> Settings -> Steam Play` and toggle the option `Enable Steam Play for Supported Titles`.
+In order to enable Steam Proton enable `Steam -> Settings -> Steam Play` and toggle the option `Enable Steam Play for Supported Titles`.
