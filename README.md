@@ -74,6 +74,8 @@ See: <https://code.visualstudio.com/docs/setup/linux>
     git config --global user.name "seVenVo1d"
     git config --global user.email "arman-cam@windowslive.com"
 
+### Middle Step
+
 Clone `fedora_installation_guide` repository to `~/Desktop/coding`
 
 ### Installing Fonts
