@@ -6,7 +6,7 @@ Fedora Installation Guide, Including special tweaks and settings
 
 0) Make sure that fast start up and secure boot is disabled (For Nvidia Drivers. It might be different for AMD)
 1) Install Fedora to USB (via Fedora Media Writer)
-2) :exclamation: **Do not select "delete after download" in Fedora Media Writer** :exclamation:
+2) :exclamation: **Do not select "Delete After Download" in Fedora Media Writer** :exclamation:
 
 ## Installation
 
@@ -28,7 +28,7 @@ Fedora Installation Guide, Including special tweaks and settings
 
 ### PART 3 (System Updates)
 
-1) Set up username-password
+1) Set up username & password
 2) Reboot
 3) Switch to **Xorg**
 4) Update your system
@@ -52,7 +52,7 @@ Fedora Installation Guide, Including special tweaks and settings
         modinfo -F version nvidia
 7) Final Reboot
 
-## Post-Installation (Essential)
+## Post-Installation
 
 ### Installing Multimedia Support
 
@@ -60,6 +60,10 @@ See: <https://rpmfusion.org/Configuration>
 
         sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
         sudo dnf groupupdate sound-and-video
+
+### Installing Chrome
+
+See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/>
 
 ### Installing VSCode
 
@@ -70,9 +74,7 @@ See: <https://code.visualstudio.com/docs/setup/linux>
     git config --global user.name "seVenVo1d"
     git config --global user.email "arman-cam@windowslive.com"
 
-### Installing Chrome
-
-See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/>
+Clone `fedora_installation_guide` repository to `~/Desktop/coding`
 
 ### Installing Fonts
 
@@ -86,37 +88,27 @@ Install the fonts via these commands
 
 See: <https://ohmyposh.dev/docs/installation/linux>
 
-for installation if necessary
-
-#### Downloading Oh My Posh
-
-    sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
-    sudo chmod +x /usr/local/bin/oh-my-posh
-
-#### Downloading the Themes
-
-    mkdir ~/.poshthemes
-    wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
-    unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
-    chmod u+rw ~/.poshthemes/*.omp.*
-    rm ~/.poshthemes/themes.zip
-
-You can look at the themes via: <https://ohmyposh.dev/docs/themes>
-
-and finally open `.bashrc` and type
+After following the steps open `.bashrc` and paste
 
     eval "$(oh-my-posh init bash --config ~/.poshthemes/jblab_2021.omp.json)"
 
 ### Installing pip and python packages
 
+See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
+
     python3 -m ensurepip --default-pip
     python3 -m pip install --upgrade pip setuptools wheel
-    python3 -m pip install numpy
-    python3 -m pip install scipy
-    python3 -m pip install matplotlib
-    python3 -m pip install pandas
-    python3 -m pip install sklearn
-    python3 -m pip install jupyterlab
+    python3 -m pip install -r ~/Desktop/coding/fedora_installation_guide/python_packages.txt
+
+#### Setting Alias
+
+    alias quarks='sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
+    alias gs="cd Desktop/coding/SimpleMC/"
+    alias mp="module load mpi/openmpi-x86_64"
+
+### Installing Gnome Tweaks
+
+    sudo dnf install gnome-tweaks
 
 ### Installing Spotify
 
@@ -128,24 +120,18 @@ Reboot
 
     sudo snap install spotify
 
-#### Setting Alias
+### Installing Steam and Enabling Steam Proton for gaming
 
-    alias quarks='sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
-    alias gs="cd Desktop/coding/SimpleMC/"
-    alias mp="module load mpi/openmpi-x86_64"
+See: <https://docs.fedoraproject.org/en-US/gaming/proton/>
+
+    sudo dnf install steam
+
+In order to enable Steam Proton follow these steps
+
+    `Steam -> Settings -> Steam Play` and toggle the option `Enable Steam Play for Supported Titles`.
 
 ### Installing Latex Fonts
 
 See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
 
     sudo dnf install texlive-scheme-full
-
-### Installing Gnome Tweaks
-
-    sudo dnf install gnome-tweaks
-
-### Installing Steam and Enabling Steam Proton for gaming
-
-    sudo dnf install steam
-
-In order to enable Steam Proton enable `Steam -> Settings -> Steam Play` and toggle the option `Enable Steam Play for Supported Titles`.

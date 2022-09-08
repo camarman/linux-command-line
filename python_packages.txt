@@ -1,0 +1,15 @@
+# Important Packages + SimpleMC
+numpy
+numdifftools
+matplotlib
+scipy
+sklearn
+deap
+mpi4py
+corner
+getdist
+fgivenx
+tqdm
+pandas
+jupyterlab
+sympy
