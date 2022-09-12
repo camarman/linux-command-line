@@ -1,5 +1,8 @@
 Oh My Posh - Favourite Themes
 
+current_fav = thecyberden
+
+
 1) Most general information
 ------------------------
 1_shell
@@ -12,4 +15,8 @@ marcduiker
 jblab_2021
 half-life
 plague
-thecyberden
+
+
+Color Codes can be found in
+
+<https://blog.depositphotos.com/neon-color-palettes.html>
