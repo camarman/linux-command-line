@@ -117,7 +117,7 @@ if you want to update the packages in the `python_packages.txt` try
 
     python3 -m pip install -r python_packages.txt --upgrade
 
-> Do not upgrade every package. Upgrading every package might cause system failure/crashes due to conflicting versions with the Fedora OS and should be approached with caution
+> Do not upgrade every package. Upgrading every package might cause system failure/crashes due to conflicting versions with the Fedora OS.
 
 ### Setting Alias
 
