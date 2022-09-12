@@ -1,0 +1,15 @@
+Oh My Posh - Favourite Themes
+
+1) Most general information
+------------------------
+1_shell
+tokyo
+
+2) Similar
+----------------
+gruvbox
+marcduiker
+jblab_2021
+half-life
+plague
+thecyberden

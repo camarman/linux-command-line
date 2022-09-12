@@ -92,7 +92,7 @@ See: <https://ohmyposh.dev/docs/installation/linux>
 
 After following the steps open `.bashrc` and paste
 
-    eval "$(oh-my-posh init bash --config ~/.poshthemes/jblab_2021.omp.json)"
+    eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"
 
 ### Installing pip and python packages
 
@@ -104,7 +104,8 @@ See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
 
 #### Setting Alias
 
-    alias quarks='sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
+    alias quarks='sudo dnf clean all && sudo dnf updateinfo && sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
+    alias cod='cd Desktop/coding'
     alias gs="cd Desktop/coding/SimpleMC/"
     alias mp="module load mpi/openmpi-x86_64"
 
