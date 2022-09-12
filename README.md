@@ -94,15 +94,30 @@ After following the steps open `.bashrc` and paste
 
     eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"
 
-### Installing pip and python packages
+### Managing Python and Packages
+
+#### Installing pip
 
 See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
 
     python3 -m ensurepip --default-pip
     python3 -m pip install --upgrade pip setuptools wheel
-    python3 -m pip install -r ~/Desktop/coding/fedora_installation_guide/python_packages.txt
 
-#### Setting Alias
+#### Installing python packages
+
+    python3 -m pip install -r python_packages.txt
+
+#### Updating python packages
+
+See: <https://pip.pypa.io/en/stable/cli/pip_install/?highlight=update#examples>
+
+    python3 -m pip install --upgrade SomePackage
+
+or try
+
+    python3 -m pip install -r python_packages.txt --upgrade
+
+### Setting Alias
 
     alias quarks='sudo dnf clean all && sudo dnf updateinfo && sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
     alias cod='cd Desktop/coding'
