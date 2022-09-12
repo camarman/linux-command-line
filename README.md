@@ -113,11 +113,11 @@ See: <https://pip.pypa.io/en/stable/cli/pip_install/?highlight=update#examples>
 
     python3 -m pip install --upgrade SomePackage
 
-if you want to update the packages in the `python_packages.txt` try
+if you want to update the packages in the `python_packages.txt` type
 
     python3 -m pip install -r python_packages.txt --upgrade
 
-> Do not upgrade every package. Upgrading every package might cause system failure/crashes due to conflicting versions with the Fedora OS.
+> Do not update every python package. Updating everything might cause system failure/crashes due to package version conflict's with the Fedora OS.
 
 ### Setting Alias
 
