@@ -80,7 +80,7 @@ Clone `fedora_installation_guide` repository to `~/Desktop/coding`
 
 ### Installing Fonts
 
-Install the fonts via these commands
+Install fonts via these commands
 
     cd /usr/share/fonts/
     sudo cp -r ~/Desktop/coding/fedora_installation_guide/Input .
@@ -94,7 +94,7 @@ After following the steps open `.bashrc` and paste
 
     eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"
 
-### Managing Python and Packages
+### Managing Python Packages
 
 #### Installing pip
 
@@ -113,7 +113,7 @@ See: <https://pip.pypa.io/en/stable/cli/pip_install/?highlight=update#examples>
 
     python3 -m pip install --upgrade SomePackage
 
-or try
+if you want to only update the packages in the `python_packages.txt` (which is recommended, since upgrading every package might cause system failure/crashes and should be approached with caution) try
 
     python3 -m pip install -r python_packages.txt --upgrade
 
