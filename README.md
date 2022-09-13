@@ -121,9 +121,9 @@ if you want to update the packages in the `python_packages.txt` type
 
 ### Setting Alias
 
-    alias quarks='sudo dnf clean all && sudo dnf updateinfo && sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove'
-    alias cod='cd Desktop/coding'
-    alias gs="cd Desktop/coding/SimpleMC/"
+    alias quarks="sudo dnf clean all && sudo dnf updateinfo && sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove"
+    alias cod="cd ~/Desktop/coding"
+    alias gs="cd ~/Desktop/coding/SimpleMC/"
     alias mp="module load mpi/openmpi-x86_64"
 
 ### Installing Gnome Tweaks
@@ -148,7 +148,7 @@ See: <https://docs.fedoraproject.org/en-US/gaming/proton/>
 
 In order to enable Steam Proton follow these steps
 
-    `Steam -> Settings -> Steam Play` and toggle the option `Enable Steam Play for Supported Titles`.
+    Steam -> Settings -> Steam Play and toggle the option `Enable Steam Play for Supported Titles.
 
 ### Installing Latex Fonts
 
