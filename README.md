@@ -49,14 +49,12 @@ Adjust these settings accordingly;
 ### System Updates
 
 1) Set username & password
-2) Reboot
-3) Switch to **Xorg**
-4) Update your system
+2) Update your system
 
         sudo dnf upgrade
-5) Wait 10 minutes
-6) Reboot
-7) Switch to **Xorg**
+3) Wait 10 minutes
+4) Reboot
+5) Switch to **Xorg**
 
 ### Enabling Nvidia
 
