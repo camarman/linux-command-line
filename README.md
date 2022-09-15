@@ -4,19 +4,37 @@ Fedora Installation Guide, Including special tweaks and settings
 
 ## Pre-Installation
 
-0) Make sure that fast start up and secure boot is disabled (For Nvidia Drivers. It might be different for AMD)
-1) Install Fedora to USB (via Fedora Media Writer)
-2) :exclamation: **Do not select "Delete After Download" in Fedora Media Writer** :exclamation:
+### UEFI Firmware Settings
+
+Adjust these settings accordingly;
+
+    Boot Mode = [UEFI]
+    Fast Boot = [Disabled]
+    Secure Boot = [Disabled] (For Nvidia drivers. It might be different for AMD).
+    USB Boot = [Enabled] (if it's given as an option)
+
+> :exclamation Learn the key-binding that opens the UEFI Firmware Settings
+
+> Note: Disabling the secure boot is optional. However, it's kind of complicated to run Linux distributions, where secure boot is enabled.
+
+### Fedora Media Writer (FMW)
+
+1) Select the **Image Source** as *Download automatically*
+2) Select the **Fedora Release** and adjust the **Writing Options**
+
+>:exclamation: Do not select "Delete download after writing" in FMW-Write Options:exclamation:
 
 ## Installation
 
-### PART 1 (Booting)
+### Booting
 
-1) Adjust the boot option from the UEFI menu
+1) Reboot
+2) Adjust the Boot Option Priorities (EFI order) from the UEFI Firmware Settings
+3) Select *Test this media & start Fedora ...*
 
-### PART 2 (Live USB - Adjusting Partitions)
+### Live USB - Adjusting Partitions
 
-1) Download gparted
+1) Install gparted
 
         sudo dnf install gparted
 
@@ -24,9 +42,12 @@ Fedora Installation Guide, Including special tweaks and settings
 3) :bangbang: **DO NOT DELETE EFI** :bangbang:
 4) Reboot (Optional)
 5) Install Fedora to hard drive
-6) Reboot
+6) Power Off
+7) Remove USB
 
-### PART 3 (System Updates)
+> Select Automatic Partition while installing to hard drive
+
+### System Updates
 
 1) Set up username & password
 2) Reboot
@@ -38,7 +59,7 @@ Fedora Installation Guide, Including special tweaks and settings
 6) Reboot
 7) Switch to **Xorg**
 
-### PART 4 (Enabling Nvidia)
+### Enabling Nvidia
 
 1) Enable [RPM Repos](https://rpmfusion.org/Configuration)
 2) Update your system
