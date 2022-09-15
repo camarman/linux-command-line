@@ -15,22 +15,21 @@ Adjust these settings accordingly;
     Secure Boot   [Disabled]
     USB Boot      [Enabled]
 
-> Disabling the secure boot is optional. However, it's kind of complicated to maintain Linux distributions, where secure boot is enabled. The situation might be different for AMD.
+> Disabling the secure boot is optional. However, it's kind of complicated to maintain Linux distributions where secure boot is enabled. The situation might be different for AMD drivers.
 
 ### Fedora Media Writer (FMW)
 
 1) Select the **Image Source** as *Download automatically*
 2) Select the **Fedora Release** and adjust the **Write Options**
 
->:exclamation: Do not select "Delete download after writing" in FMW - Write Options:exclamation:
+>:exclamation: Do not select "Delete download after writing" in FMW - Write Options
 
 ## Installation
 
 ### Booting
 
-1) Reboot
-2) Adjust the **Boot Option Priorities** (EFI order) from the UEFI Firmware Settings
-3) Select *Test this media & start Fedora ...*
+1) Adjust the **Boot Option Priorities** (EFI order) from the UEFI Firmware Settings
+2) In the **GNU GRUB** menu select *Test this media & start Fedora ...*
 
 ### Live USB - Adjusting Partitions
 
@@ -40,16 +39,16 @@ Adjust these settings accordingly;
 
 2) Delete **ext4** and the main partition
 3) :bangbang: **DO NOT DELETE EFI** :bangbang:
-4) Reboot (Optional)
+4) Reboot
 5) Install Fedora to hard drive
 6) Power Off
 7) Remove USB
 
-> Select Automatic Partition while installing to hard drive
+> :exclamation: Select "Automatic Partition" while installing to hard drive
 
 ### System Updates
 
-1) Set up username & password
+1) Set username & password
 2) Reboot
 3) Switch to **Xorg**
 4) Update your system
