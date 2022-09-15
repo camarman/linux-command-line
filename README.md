@@ -6,30 +6,30 @@ Fedora Installation Guide, Including special tweaks and settings
 
 ### UEFI Firmware Settings
 
+> :exclamation: Learn the key-binding that opens the UEFI Firmware Settings
+
 Adjust these settings accordingly;
 
-    Boot Mode = [UEFI]
-    Fast Boot = [Disabled]
-    Secure Boot = [Disabled] (For Nvidia drivers. It might be different for AMD).
-    USB Boot = [Enabled] (if it's given as an option)
+    Boot Mode     [UEFI]
+    Fast Boot     [Disabled]
+    Secure Boot   [Disabled]
+    USB Boot      [Enabled]
 
-> :exclamation Learn the key-binding that opens the UEFI Firmware Settings
-
-> Note: Disabling the secure boot is optional. However, it's kind of complicated to run Linux distributions, where secure boot is enabled.
+> Disabling the secure boot is optional. However, it's kind of complicated to maintain Linux distributions, where secure boot is enabled. The situation might be different for AMD.
 
 ### Fedora Media Writer (FMW)
 
 1) Select the **Image Source** as *Download automatically*
-2) Select the **Fedora Release** and adjust the **Writing Options**
+2) Select the **Fedora Release** and adjust the **Write Options**
 
->:exclamation: Do not select "Delete download after writing" in FMW-Write Options:exclamation:
+>:exclamation: Do not select "Delete download after writing" in FMW - Write Options:exclamation:
 
 ## Installation
 
 ### Booting
 
 1) Reboot
-2) Adjust the Boot Option Priorities (EFI order) from the UEFI Firmware Settings
+2) Adjust the **Boot Option Priorities** (EFI order) from the UEFI Firmware Settings
 3) Select *Test this media & start Fedora ...*
 
 ### Live USB - Adjusting Partitions
