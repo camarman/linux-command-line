@@ -28,7 +28,7 @@ Adjust these settings accordingly;
 
 ### Booting
 
-1) Adjust the **Boot Option Priorities** (EFI order) from the UEFI Firmware Settings
+1) Adjust the **Boot Option Priorities** (order of the EFI) from the UEFI Firmware Settings
 2) In the **GNU GRUB** menu select *Test this media & start Fedora ...*
 
 ### Live USB - Adjusting Partitions
@@ -37,14 +37,13 @@ Adjust these settings accordingly;
 
         sudo dnf install gparted
 
-2) Delete **ext4** and the main partition
-3) :bangbang: **DO NOT DELETE EFI** :bangbang:
-4) Reboot
-5) Install Fedora to hard drive
-6) Power Off
-7) Remove USB
+2) Delete **ext4** and **btrfs** (fedora_localhost-live/main partition)
+3) :bangbang: **DO NOT DELETE EFI System Partition** :bangbang:
+4) Install Fedora to hard drive
+5) Power Off
+6) Remove USB
 
-> :exclamation: Select "Automatic Partition" while installing to hard drive
+> :exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
 
 ### System Updates
 
