@@ -9,7 +9,7 @@ Fedora installation guide, including special tweaks and settings
 > :exclamation: Learn the key-binding that opens the UEFI Firmware Settings
 
 Aras's Computer: F2
-My Computer:
+My Computer: F2
 
 Adjust these settings accordingly;
 
@@ -18,14 +18,14 @@ Adjust these settings accordingly;
     Secure Boot   [Disabled]
     USB Boot      [Enabled]
 
-> Disabling the secure boot is optional. However, it's kind of complicated to maintain Linux distributions where secure boot is enabled. The situation might be different for AMD drivers.
+> IMPORTANT: Disabling the secure boot is optional. However, it's kind of complicated to maintain Linux distributions where secure boot is enabled. You might encounter with many error during updates/upgrades etc. The safest way is to disable the Secure Boot.
 
 ### Fedora Media Writer (FMW)
 
 1) Select the **Image Source** as *Download automatically*
 2) Select the **Fedora Release** and adjust the **Write Options**
 
->:exclamation: Do not select *Delete download after writing* in Write Options
+    :exclamation: Do not select *Delete download after writing* in Write Options
 
 ## Installation
 
@@ -44,10 +44,11 @@ Adjust these settings accordingly;
 3) :bangbang: **DO NOT DELETE EFI System Partition** :bangbang:
 4) Reboot
 5) Install Fedora to hard drive
+
+    exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
+
 6) Power Off
 7) Remove USB
-
-> :exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
 
 ### System Updates
 
