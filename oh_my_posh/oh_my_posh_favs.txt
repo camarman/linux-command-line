@@ -20,3 +20,5 @@ plague
 Color Codes can be found in
 
 <https://blog.depositphotos.com/neon-color-palettes.html>
+
+Terminal Settings:

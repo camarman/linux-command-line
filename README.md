@@ -1,12 +1,15 @@
 # Fedora Installation Guide
 
-Fedora Installation Guide, Including special tweaks and settings
+Fedora installation guide, including special tweaks and settings
 
 ## Pre-Installation
 
 ### UEFI Firmware Settings
 
 > :exclamation: Learn the key-binding that opens the UEFI Firmware Settings
+
+Aras's Computer: F2
+My Computer:
 
 Adjust these settings accordingly;
 
@@ -22,7 +25,7 @@ Adjust these settings accordingly;
 1) Select the **Image Source** as *Download automatically*
 2) Select the **Fedora Release** and adjust the **Write Options**
 
->:exclamation: Do not select "Delete download after writing" in FMW - Write Options
+>:exclamation: Do not select *Delete download after writing* in Write Options
 
 ## Installation
 
@@ -39,9 +42,10 @@ Adjust these settings accordingly;
 
 2) Delete **ext4** and **btrfs** (fedora_localhost-live/main partition)
 3) :bangbang: **DO NOT DELETE EFI System Partition** :bangbang:
-4) Install Fedora to hard drive
-5) Power Off
-6) Remove USB
+4) Reboot
+5) Install Fedora to hard drive
+6) Power Off
+7) Remove USB
 
 > :exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
 
@@ -172,3 +176,20 @@ In order to enable Steam Proton follow these steps
 See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
 
     sudo dnf install texlive-scheme-full
+
+## Encountered Errors
+
+If you see this in gnome-software `Secure Boot dbx Configuration Update`, you need to install it via
+
+    sudo fwupdmgr refresh ; sudo fwupdmgr get-updates
+    sudo fwupdmgr update
+
+After the update, check the lines via `dbxtool -l`.
+
+If you encounter `tpm.c:148: Unknown TPM error` while trying to start the Fedora, you can try to disable the Secure Boot (*if it's enabled*). Also ASUS seems to have problems with the `fwupdmgr`.
+
+Check these links for more information
+
+<https://ask.fedoraproject.org/t/secure-boot-dbx-update/26626/13>
+<https://ask.fedoraproject.org/t/grub-core-error-you-need-to-load-the-kernel-first/14405/2>
+<https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/1848892>
