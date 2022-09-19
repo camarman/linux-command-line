@@ -8,8 +8,7 @@ Fedora installation guide, including unique tweaks and settings
 
 > :exclamation: Learn the key-binding that opens the UEFI Firmware Settings
 
-Aras' Computer: F2
-My Computer: F2
+Aras' Computer & My Computer: F2
 
 Adjust these settings accordingly;
 
@@ -18,7 +17,7 @@ Adjust these settings accordingly;
     Secure Boot   [Disabled]
     USB Boot      [Enabled]
 
-> IMPORTANT: Disabling the secure boot is optional. However, it is kind of complicated to maintain Linux distributions where the secure boot is enabled. You might encounter many errors during updates/upgrades. The safest way is to disable the Secure Boot.
+> IMPORTANT: Disabling the Secure Boot is optional. However, it is kind of complicated to maintain Linux distributions where the Secure Boot is enabled. You might encounter many errors during the update/upgrade procedures. The safest way to use any Linux distribution (which includes Fedora) is to disable the Secure Boot.
 
 ### Fedora Media Writer (FMW)
 
@@ -34,21 +33,25 @@ Adjust these settings accordingly;
 1) Adjust the **Boot Option Priorities** (order of the EFI) from the UEFI Firmware Settings
 2) In the **GNU GRUB** menu, select *Test this media & start Fedora ...*
 
-### Live USB - Adjusting Partitions
+### Installing Fedora
 
-1) Install gparted
+1) Install gparted via
 
         sudo dnf install gparted
 
-2) Delete **ext4** and **btrfs** (fedora_localhost-live/main partition)
-3) :bangbang: **DO NOT DELETE EFI System Partition** :bangbang:
-4) Reboot
-5) Install Fedora to Hard Drive
+2) Adjust partitions
+
+    Delete **ext4** and **btrfs** (fedora_localhost-live/main partition)
+
+    :bangbang: **DO NOT DELETE EFI** :bangbang:
+
+3) Reboot
+4) Install Fedora to Hard Drive
 
     :exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
 
-6) Power Off
-7) Remove USB
+5) Power Off
+6) Remove USB
 
 ### System Updates
 
@@ -56,18 +59,25 @@ Adjust these settings accordingly;
 2) Update your system
 
         sudo dnf upgrade
-3) Wait 10 minutes
+3) Wait 5 minutes
 4) Reboot
 5) Switch to **Xorg**
 
 ### Enabling Nvidia
 
-1) Enable [RPM Repos](https://rpmfusion.org/Configuration)
+1) Install [Free and Nonfree RPM Repositories](https://rpmfusion.org/Configuration)
+
+        sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
 2) Update your system
 
         sudo dnf upgrade --refresh
 3) Reboot
-4) Download [Nvidia and Cuda Support](https://rpmfusion.org/Howto/NVIDIA)
+4) Install [Nvidia and Cuda Support](https://rpmfusion.org/Howto/NVIDIA)
+
+        sudo dnf install akmod-nvidia
+        sudo dnf install xorg-x11-drv-nvidia-cuda
+
 5) Wait 10 minutes
 6) Check if the drivers are installed
 
@@ -80,8 +90,8 @@ Adjust these settings accordingly;
 
 See: <https://rpmfusion.org/Configuration>
 
-        sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-        sudo dnf groupupdate sound-and-video
+    sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+    sudo dnf groupupdate sound-and-video
 
 ### Installing Chrome
 
@@ -139,7 +149,7 @@ If you want to update the packages in the `python_packages.txt` type
 
     python3 -m pip install -r python_packages.txt --upgrade
 
-> Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package versions.
+> Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package version.
 
 ### Setting Alias
 
@@ -178,7 +188,9 @@ See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
 
     sudo dnf install texlive-scheme-full
 
-## Encountered Errors
+## Extra
+
+### Secure Boot dbx Configuration Update
 
 If you see this in gnome-software `Secure Boot dbx Configuration Update`, you need to install it via
 
@@ -194,3 +206,8 @@ Check these links for more information.
 <https://ask.fedoraproject.org/t/secure-boot-dbx-update/26626/13>
 <https://ask.fedoraproject.org/t/grub-core-error-you-need-to-load-the-kernel-first/14405/2>
 <https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/1848892>
+
+### Removing Windows from GRUB menu
+
+1) Delete `/boot/efi/EFI/Microsoft` directory on your running system
+2) Update grub with `grub2-mkconfig -o /boot/grub2/grub.cfg`
