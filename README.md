@@ -1,6 +1,6 @@
 # Fedora Installation Guide
 
-Fedora installation guide, including special tweaks and settings
+Fedora installation guide, including unique tweaks and settings
 
 ## Pre-Installation
 
@@ -8,7 +8,7 @@ Fedora installation guide, including special tweaks and settings
 
 > :exclamation: Learn the key-binding that opens the UEFI Firmware Settings
 
-Aras's Computer: F2
+Aras' Computer: F2
 My Computer: F2
 
 Adjust these settings accordingly;
@@ -18,7 +18,7 @@ Adjust these settings accordingly;
     Secure Boot   [Disabled]
     USB Boot      [Enabled]
 
-> IMPORTANT: Disabling the secure boot is optional. However, it's kind of complicated to maintain Linux distributions where secure boot is enabled. You might encounter with many error during updates/upgrades etc. The safest way is to disable the Secure Boot.
+> IMPORTANT: Disabling the secure boot is optional. However, it is kind of complicated to maintain Linux distributions where the secure boot is enabled. You might encounter many errors during updates/upgrades. The safest way is to disable the Secure Boot.
 
 ### Fedora Media Writer (FMW)
 
@@ -32,7 +32,7 @@ Adjust these settings accordingly;
 ### Booting
 
 1) Adjust the **Boot Option Priorities** (order of the EFI) from the UEFI Firmware Settings
-2) In the **GNU GRUB** menu select *Test this media & start Fedora ...*
+2) In the **GNU GRUB** menu, select *Test this media & start Fedora ...*
 
 ### Live USB - Adjusting Partitions
 
@@ -43,9 +43,9 @@ Adjust these settings accordingly;
 2) Delete **ext4** and **btrfs** (fedora_localhost-live/main partition)
 3) :bangbang: **DO NOT DELETE EFI System Partition** :bangbang:
 4) Reboot
-5) Install Fedora to hard drive
+5) Install Fedora to Hard Drive
 
-    exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
+    :exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
 
 6) Power Off
 7) Remove USB
@@ -112,7 +112,7 @@ Install fonts via these commands
 
 See: <https://ohmyposh.dev/docs/installation/linux>
 
-After following the steps open `.bashrc` and paste
+After following the commands, open `.bashrc` and paste
 
     eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"
 
@@ -135,11 +135,11 @@ See: <https://pip.pypa.io/en/stable/cli/pip_install/?highlight=update#examples>
 
     python3 -m pip install --upgrade SomePackage
 
-if you want to update the packages in the `python_packages.txt` type
+If you want to update the packages in the `python_packages.txt` type
 
     python3 -m pip install -r python_packages.txt --upgrade
 
-> Do not update every python package. Updating everything might cause system failure/crashes due to package version conflict's with the Fedora OS.
+> Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package versions.
 
 ### Setting Alias
 
@@ -187,9 +187,9 @@ If you see this in gnome-software `Secure Boot dbx Configuration Update`, you ne
 
 After the update, check the lines via `dbxtool -l`.
 
-If you encounter `tpm.c:148: Unknown TPM error` while trying to start the Fedora, you can try to disable the Secure Boot (*if it's enabled*). Also ASUS seems to have problems with the `fwupdmgr`.
+If you encounter `tpm.c:148: Unknown TPM error` while trying to start the Fedora, you can try to disable the Secure Boot (*if it has enabled*). Also, ASUS seems to have problems with the `fwupdmgr.`
 
-Check these links for more information
+Check these links for more information.
 
 <https://ask.fedoraproject.org/t/secure-boot-dbx-update/26626/13>
 <https://ask.fedoraproject.org/t/grub-core-error-you-need-to-load-the-kernel-first/14405/2>
