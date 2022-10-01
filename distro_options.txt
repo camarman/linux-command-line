@@ -1,10 +1,18 @@
-RHEL
-CentOS Stream
-Slackware
-openSUSE
-Debian
-Ubuntu
-Gentoo
+--- Must Try Distros ---
 Arch
+CentOS Stream
+Debian
+Gentoo
+LFS (Linux From Scratch)
+openSUSE
 Qubes OS
-Tails OS
+RHEL
+Slackware
+Tails
+Ubuntu
+
+
+--- Interesting Distros ---
+Red Star OS
+Suicide Linux
+TempleOS
