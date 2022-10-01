@@ -1,0 +1,10 @@
+RHEL
+CentOS Stream
+Slackware
+openSUSE
+Debian
+Ubuntu
+Gentoo
+Arch
+Qubes OS
+Tails OS
