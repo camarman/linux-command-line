@@ -212,13 +212,26 @@ See: <https://www.virtualbox.org/wiki/Linux_Downloads>
 
         sudo dnf install kernel-devel kernel-headers gcc gcc-c++ make git
 
-2) Add repository information to `/etc/yum.repos.d/`.
-3) Upgrade the system
+2) Download **SHA256 checksums** and **MD5 checksums** files (via *save page as*) and test the checksums by running
 
+        sha256sum -c SHA256SUMS 2>&1 | grep OK
+        md5sum -c MD5SUMS 2>&1 | grep OK
+
+    make sure that both of them returns `OK`.
+3) Add repository information to `/etc/yum.repos.d/` via the name `virtualbox.repo`
+
+        [virtualbox]
+        name=Fedora $releasever - $basearch - VirtualBox
+        baseurl=http://download.virtualbox.org/virtualbox/rpm/fedora/$releasever/$basearch
+        enabled=1
+        gpgcheck=1
+        repo_gpgcheck=1
+        gpgkey=https://www.virtualbox.org/download/oracle_vbox.asc
+
+4) Upgrade the system in order to import the keys
         sudo dnf upgrade
-
-4) Reboot
-5) Install Oracle Virtual Box
+5) Reboot
+6) Install *Oracle Virtual Box*
 
         sudo dnf install VirtualBox
-6) Reboot
+7) Reboot
