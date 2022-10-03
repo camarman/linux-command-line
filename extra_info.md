@@ -26,22 +26,15 @@ Check these links for more information.
 
 See: <https://ubuntu.com/tutorials/how-to-verify-ubuntu#1-overview>
 
-1) Along with the `.iso` file download the checksums `SHA256SUMS` and GnuPG signature `SHA256SUMS.gpg`.
-2) Run
+Along with the `.iso` file download the checksum `SHA256SUMS` and GnuPG signature `SHA256SUMS.gpg`. After that run
 
-  		gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
- 	to verify the signature. if it says `Can't check signature: No public key` then follow these steps:
+        gpg --verify SHA256SUMS.gpg SHA256SUMS
+to verify the signature. If it says *Can't check signature: No public key* then run
 
-  		gpg --keyid-format long --keyserver <SITE> --recv-keys <KEY1>
-	where `<KEY1>` must be obtained from the `--verify` command
+        gpg --keyserver <SITE> --recv-keys <KEY>
+where `<KEY>` must be obtained from the previous command. Inspect the key fingerprints by running
 
-3) Inspect the key fingerprints by running:
-
-        gpg --keyid-format long --list-keys --with-fingerprint 0x46181433FBB75451 0xD94AA3F0EFE21092
-4) Verify the checksum again
-
-        gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
-
-5) Finally, check the checksum via
+        gpg --list-keys --with-fingerprint <KEY>
+Finally, verify the signature again and check the checksum
 
         sha256sum -c SHA256SUMS 2>&1 | grep OK
