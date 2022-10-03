@@ -59,7 +59,7 @@ Adjust these settings accordingly;
 2) Update your system
 
         sudo dnf upgrade
-3) Wait 5 minutes
+3) Wait 7 minutes
 4) Reboot
 5) Switch to **Xorg**
 
@@ -78,7 +78,7 @@ Adjust these settings accordingly;
         sudo dnf install akmod-nvidia
         sudo dnf install xorg-x11-drv-nvidia-cuda
 
-5) Wait 10 minutes
+5) Wait 7 minutes
 6) Check if the drivers are installed
 
         modinfo -F version nvidia
@@ -151,12 +151,28 @@ If you want to update the packages in the `python_packages.txt` type
 
 > Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package version.
 
+#### Creating Virtual Environments
+
+See: <https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments>
+
+In order create a virtual environment, type
+
+    python3 -m venv <DIR>
+
+where `<DIR>` is the name of the virtual environment directory. In order to activate the virtual environment type
+
+    source <DIR>/bin/activate
+
 ### Setting Alias
 
-    alias quarks="sudo dnf clean all && sudo dnf updateinfo && sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove"
+    alias quarks="sudo dnf clean all && sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove"
     alias cod="cd ~/Desktop/coding"
     alias gs="cd ~/Desktop/coding/SimpleMC/"
     alias mp="module load mpi/openmpi-x86_64"
+    alias log_server="ssh -X student@160.75.19.126"
+    alias vpn_info='less ~/Desktop/server_info'
+    alias cvenv='python3 -m venv venv/'
+    alias avenv='source venv/bin/activate'
 
 ### Installing Gnome Tweaks
 
@@ -188,26 +204,21 @@ See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
 
     sudo dnf install texlive-scheme-full
 
-## Extra
+### Installing Virtual Box
 
-### Secure Boot dbx Configuration Update
+See: <https://www.virtualbox.org/wiki/Linux_Downloads>
 
-If you see this in gnome-software `Secure Boot dbx Configuration Update`, you need to install it via
+1) Make sure that some of the packages are installed
 
-    sudo fwupdmgr refresh ; sudo fwupdmgr get-updates
-    sudo fwupdmgr update
+        sudo dnf install kernel-devel kernel-headers gcc gcc-c++ make git
 
-After the update, check the lines via `dbxtool -l`.
+2) Add repository information to `/etc/yum.repos.d/`.
+3) Upgrade the system
 
-If you encounter `tpm.c:148: Unknown TPM error` while trying to start the Fedora, you can try to disable the Secure Boot (*if it has enabled*). Also, ASUS seems to have problems with the `fwupdmgr.`
+        sudo dnf upgrade
 
-Check these links for more information.
+4) Reboot
+5) Install Oracle Virtual Box
 
-<https://ask.fedoraproject.org/t/secure-boot-dbx-update/26626/13>
-<https://ask.fedoraproject.org/t/grub-core-error-you-need-to-load-the-kernel-first/14405/2>
-<https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/1848892>
-
-### Removing Windows from GRUB menu
-
-1) Delete `/boot/efi/EFI/Microsoft` directory on your running system
-2) Update grub with `grub2-mkconfig -o /boot/grub2/grub.cfg`
+        sudo dnf install VirtualBox
+6) Reboot

@@ -1,18 +1,27 @@
 --- Must Try Distros ---
-Arch
-CentOS Stream
-Debian
+
+Arch -> Garuda Linux
+     -> EndeavourOS
+------------------------
+
+Debian -> Ubuntu
+------------------------
+
+RHEL -> CentOS Stream -> AlmaLinux
+                      -> Rocky Linux
+     -> Fedora -> Qubes OS
+------------------------
+
 Gentoo
 LFS (Linux From Scratch)
 openSUSE
-Qubes OS
-RHEL
 Slackware
-Tails
-Ubuntu
-
 
 --- Interesting Distros ---
-Red Star OS
+Astra Linux - Russian Linux
+Pardus - Turkish Linux
+Red Star OS - Korean Linux
+ROSA Linux - Russian Linux
 Suicide Linux
+Tails
 TempleOS
