@@ -24,8 +24,23 @@ Check these links for more information.
 
 ## Verifying `.iso` files
 
-Obtain the SHA value of the `.iso` file via `sha512sum -b filename.iso` and save it into `produced.sha`. Later copy the online (available) sha512sum key and paste it into `original.sha`. Then run `check_shasum.py`.
+See: <https://ubuntu.com/tutorials/how-to-verify-ubuntu#1-overview>
 
-Obtain the Key ID(fingerprint) of the `.iso` file via
+1) Along with the `.iso` file download the checksums `SHA256SUMS` and GnuPG signature ``SHA256SUMS.gpg`.
+2) Check
+        gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
 
-    gpg --verify filename.iso > produced.asc
+    if it says `Can't check signature: No public key` then follow these steps:
+
+        gpg --keyid-format long --keyserver <SITE> --recv-keys <KEY1> <KEY2>
+3) Inspect the key fingerprints by running:
+
+        gpg --keyid-format long --list-keys --with-fingerprint 0x46181433FBB75451 0xD94AA3F0EFE21092
+
+4) Verify the checksum again
+
+        gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
+
+5) Finally, check the checksum via
+
+        sha256sum -c SHA256SUMS 2>&1 | grep OK
