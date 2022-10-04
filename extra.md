@@ -2,20 +2,20 @@
 
 ## Secure Boot dbx Configuration Update
 
-If you see this in gnome-software `Secure Boot dbx Configuration Update`, you need to install it via
+See: <https://ask.fedoraproject.org/t/secure-boot-dbx-update/26626/13>
+
+See: <https://ask.fedoraproject.org/t/grub-core-error-you-need-to-load-the-kernel-first/14405/2>
+
+See: <https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/1848892>
+
+If you see this message `Secure Boot dbx Configuration Update` in gnome-software, you need to install it via
 
     sudo fwupdmgr refresh ; sudo fwupdmgr get-updates
     sudo fwupdmgr update
 
-After the update, check the lines via `dbxtool -l`.
+After the update, check the lines by running `dbxtool -l`.
 
-If you encounter `tpm.c:148: Unknown TPM error` while trying to start the Fedora, you can try to disable the Secure Boot (*if it has enabled*). Also, ASUS seems to have problems with the `fwupdmgr.`
-
-Check these links for more information.
-
-<https://ask.fedoraproject.org/t/secure-boot-dbx-update/26626/13>
-<https://ask.fedoraproject.org/t/grub-core-error-you-need-to-load-the-kernel-first/14405/2>
-<https://bugs.launchpad.net/ubuntu/+source/grub2/+bug/1848892>
+If you encounter `tpm.c:148: Unknown TPM error` while trying to start the Fedora, you can try to disable the Secure Boot (*if it is enabled*). Also, ASUS seems to have problems with the `fwupdmgr.`
 
 ## Removing Windows from GRUB menu
 
@@ -26,16 +26,16 @@ Check these links for more information.
 
 See: <https://ubuntu.com/tutorials/how-to-verify-ubuntu#1-overview>
 
-Along with the `.iso` file download the checksum `SHA256SUMS` and GnuPG signature `SHA256SUMS.gpg`. After that run
+Along with the `.iso` download the checksum `SHA256SUMS` and GnuPG signature `SHA256SUMS.gpg` files. After that run:
 
     gpg --verify SHA256SUMS.gpg SHA256SUMS
-to verify the signature. If it says `Can't check signature: No public key` then run
+to verify the signature. If it returns `Can't check signature: No public key` then run
 
     gpg --keyserver <SITE> --recv-keys <KEY>
 where `<KEY>` must be obtained from the previous command. Inspect the key fingerprints by running
 
     gpg --list-keys --with-fingerprint <KEY>
-Finally, verify the signature again and check the checksum
+Finally, verify the signature again and check the checksum via
 
     sha256sum -c SHA256SUMS 2>&1 | grep OK
 
@@ -74,17 +74,19 @@ See: <https://www.virtualbox.org/wiki/Linux_Downloads>
 
 ## Installing KVM (Kernel based Virtual Machine)
 
-See_1: <https://fedoramagazine.org/full-virtualization-system-on-fedora-workstation-30/>
+See: <https://fedoramagazine.org/full-virtualization-system-on-fedora-workstation-30/>
 
-See_2: <https://help.ubuntu.com/community/KVM/Installation>
+See: <https://help.ubuntu.com/community/KVM/Installation>
 
 To see if your processor supports Intel VT-x, you can review the output from this command:
 
     egrep -c '(vmx|svm)' /proc/cpuinfo
 
-If returns `0` it means that your CPU doesn't support hardware virtualization.
+If returns `0` it means that your CPU **doesn't** support hardware virtualization.
 
-If returns `1` or more it means that your CPU does support hardware virtualization. (But you still need to make sure that virtualization is enabled in the BIOS). Later on install virtualization via
+If returns `1` or more it means that your CPU **does** support hardware virtualization. (But you still need to make sure that virtualization is enabled in the BIOS).
+
+Later on install virtualization via
 
     sudo dnf install @virtualization
 
