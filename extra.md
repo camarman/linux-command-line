@@ -29,7 +29,7 @@ See: <https://ubuntu.com/tutorials/how-to-verify-ubuntu#1-overview>
 Along with the `.iso` file download the checksum `SHA256SUMS` and GnuPG signature `SHA256SUMS.gpg`. After that run
 
     gpg --verify SHA256SUMS.gpg SHA256SUMS
-to verify the signature. If it says *Can't check signature: No public key* then run
+to verify the signature. If it says `Can't check signature: No public key` then run
 
     gpg --keyserver <SITE> --recv-keys <KEY>
 where `<KEY>` must be obtained from the previous command. Inspect the key fingerprints by running
@@ -64,6 +64,7 @@ See: <https://www.virtualbox.org/wiki/Linux_Downloads>
         gpgkey=https://www.virtualbox.org/download/oracle_vbox.asc
 
 4) Upgrade the system in order to import the keys
+
         sudo dnf upgrade
 5) Reboot
 6) Install *Oracle Virtual Box*
@@ -81,9 +82,9 @@ To see if your processor supports Intel VT-x, you can review the output from thi
 
     egrep -c '(vmx|svm)' /proc/cpuinfo
 
-If 0 it means that your CPU doesn't support hardware virtualization.
+If returns `0` it means that your CPU doesn't support hardware virtualization.
 
-If 1 or more it does - but you still need to make sure that virtualization is enabled in the BIOS. Later on install virtualization via
+If returns `1` or more it means that your CPU does support hardware virtualization. (But you still need to make sure that virtualization is enabled in the BIOS). Later on install virtualization via
 
     sudo dnf install @virtualization
 
