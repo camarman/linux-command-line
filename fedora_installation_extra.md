@@ -78,7 +78,7 @@ See: <https://fedoramagazine.org/full-virtualization-system-on-fedora-workstatio
 
 See: <https://help.ubuntu.com/community/KVM/Installation>
 
-To see if your processor supports Intel VT-x, you can review the output from this command:
+To see if your processor supports Intel VT-x, you can review the output of this command:
 
     egrep -c '(vmx|svm)' /proc/cpuinfo
 

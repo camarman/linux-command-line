@@ -169,10 +169,11 @@ where `<DIR>` is the name of the virtual environment directory. In order to acti
     alias cod="cd ~/Desktop/coding"
     alias gs="cd ~/Desktop/coding/SimpleMC/"
     alias mp="module load mpi/openmpi-x86_64"
-    alias log_server="ssh -X student@160.75.19.126"
-    alias vpn_info='less ~/Desktop/server_info'
+    alias logserver="ssh -X student@160.75.19.126"
+    alias vpninfo='less ~/Desktop/server_info'
     alias cvenv='python3 -m venv venv/'
     alias avenv='source venv/bin/activate'
+    alias scopy='scp -r student@160.75.19.126:~/Arman/SimpleMC/simplemc/chains ~/Desktop/coding/model_analysis'
 
 ### Installing Gnome Tweaks
 
