@@ -94,3 +94,19 @@ Finally, start and enable the `libvirtd` service
 
     sudo systemctl start libvirtd
     sudo systemctl enable libvirtd
+
+## Gnome Extensions
+
+See: <https://docs.fedoraproject.org/en-US/quick-docs/gnome-shell-extensions/>
+
+Install the gnome extensions app via
+
+    sudo dnf install gnome-extensions-app
+
+and then type
+
+    sudo dnf install chrome-gnome-shell
+
+Best Extension:
+
+>Applications Menu, Places Status Indicator, Caffeine, Blur my shell, User themes
