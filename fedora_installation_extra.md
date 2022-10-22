@@ -109,4 +109,14 @@ and then type
 
 Best Extension:
 
->Applications Menu, Places Status Indicator, Caffeine, Blur my shell, User themes
+>**Manually Installed**: Blur my Shell, Caffeine, User Themes, Vitals
+>
+>**Built-in**: Applications Menu, Background Logo, Places Status Indicator
+
+For themes, and icons and more see : <https://github.com/daniruiz>
+
+>**Icons**: Flat-Remix-Magenta-Light -- Flat Remix
+>
+>**Shell**: Flat-Remix-Miami-Dark-fullPanel -- Flat Remix Gnome
+>
+>**Legacy**: Applications: Flat-Remix-GTK-Magenta-Darkest -- Flat Remix GTK
