@@ -35,7 +35,7 @@ Such as BASH, GCC, EMACS, NANO etc. See the full list from:
 7) Gentoo
 8) Slackware
 
-:bang: Also try LFS (Linux From Scratch)
+:bangbang: Also try LFS (Linux From Scratch)
 
 ### Interesting Distros
 
@@ -47,7 +47,9 @@ Such as BASH, GCC, EMACS, NANO etc. See the full list from:
 6) Tails
 7) TempleOS
 
-## openSUSE Tumbleweed
+## Distro Information
+
+### openSUSE Tumbleweed
 
 Upgrading information
 
