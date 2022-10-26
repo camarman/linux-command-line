@@ -165,7 +165,7 @@ where `<DIR>` is the name of the virtual environment directory. In order to acti
 
 ### Setting Alias
 
-    alias quarks="sudo dnf clean all && sudo dnf upgrade --refresh && sudo dnf distro-sync --refresh && sudo snap refresh && sudo dnf autoremove"
+    alias quarks="sudo dnf clean all && sudo dnf upgrade && sudo dnf distro-sync && sudo snap refresh && sudo dnf autoremove"
     alias cod="cd ~/Desktop/coding"
     alias gs="cd ~/Desktop/coding/SimpleMC/"
     alias mp="module load mpi/openmpi-x86_64"
