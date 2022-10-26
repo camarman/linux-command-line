@@ -1,6 +1,0 @@
-cd (cd, cd -, cd ~)
-pwd
-ls
-less ("/" for searching files, "space" for next page, "b" for previous page, "G" for end page, "g" for beginning of the page)
-file
-

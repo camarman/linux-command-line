@@ -1,3 +1,0 @@
-Upgrading information
-
-https://en.opensuse.org/SDB:Upgrade_Tumbleweed
