@@ -108,15 +108,15 @@ See: <https://code.visualstudio.com/docs/setup/linux>
 
 ### Middle Step
 
-Clone `fedora_installation_guide` repository to `~/Desktop/coding`
+Clone `linux_black_hole` repository to `~/Desktop/coding`
 
 ### Installing Fonts
 
 Install fonts via these commands
 
     cd /usr/share/fonts/
-    sudo cp -r ~/Desktop/coding/fedora_installation_guide/Input .
-    sudo cp -r ~/Desktop/coding/fedora_installation_guide/Hasklug .
+    sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Input .
+    sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Hasklug .
 
 ### Installing Oh My Posh
 
@@ -147,7 +147,7 @@ See: <https://pip.pypa.io/en/stable/cli/pip_install/?highlight=update#examples>
 
 If you want to update the packages in the `python_packages.txt` type
 
-    python3 -m pip install -r python_packages.txt --upgrade
+    python3 -m pip install -r fedora_installation_guide/python_packages.txt --upgrade
 
 > Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package version.
 
