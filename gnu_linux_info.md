@@ -26,14 +26,14 @@ Such as BASH, GCC, EMACS, NANO etc. See the full list from:
 
 ### Waiting
 
-1) Arch
-2) EndeavourOS
-3) Debian
-4) Ubuntu
-5) RHEL
-6) Qubes OS
-7) Gentoo
-8) Slackware
+1) Ubuntu
+2) Debian
+3) EndeavourOS
+4) RHEL
+5) Arch
+6) Gentoo
+7) Slackware
+8) Qubes OS
 
 :bangbang: Also try LFS (Linux From Scratch)
 
