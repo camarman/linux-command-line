@@ -23,17 +23,17 @@ Such as BASH, GCC, EMACS, NANO etc. See the full list from:
 ### Already tried
 
 1) openSUSE
+2) Ubuntu
 
 ### Waiting
 
-1) Ubuntu
-2) Debian
-3) EndeavourOS
-4) RHEL
-5) Arch
-6) Gentoo
-7) Slackware
-8) Qubes OS
+1) Debian
+2) EndeavourOS
+3) RHEL
+4) Arch
+5) Gentoo
+6) Slackware
+7) Qubes OS
 
 :bangbang: Also try LFS (Linux From Scratch)
 

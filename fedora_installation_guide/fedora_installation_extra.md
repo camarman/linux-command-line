@@ -120,3 +120,9 @@ For themes, and icons and more see : <https://github.com/daniruiz>
 >**Shell**: Flat-Remix-Miami-Dark-fullPanel -- Flat Remix Gnome
 >
 >**Legacy**: Applications: Flat-Remix-GTK-Magenta-Darkest -- Flat Remix GTK
+
+## Installing Cool Retro Term
+
+You can easily install the Cool Retro Term via Fedora packages. Just type;
+
+    sudo dnf install cool-retro-term

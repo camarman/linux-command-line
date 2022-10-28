@@ -45,7 +45,7 @@ Note: Use `man` `info` or `help` commands to get an information about the comman
 >
 >`\` : Search for a character
 >
->`g` : Move to begining of a text file
+>`g` : Move to beginning of a text file
 >
 >`G` : Move to the end of a text file
 
@@ -63,4 +63,4 @@ Note: Use `man` `info` or `help` commands to get an information about the comman
 
 `ln` : Creates hard and symbolic links
 
-You can also look at wildcards if necessary.
+You can also look at wildcards if necessary
