@@ -123,6 +123,8 @@ For themes, and icons and more see : <https://github.com/daniruiz>
 
 ## Installing Cool Retro Term
 
-You can easily install the Cool Retro Term via Fedora packages. Just type;
+See: <https://github.com/Swordfish90/cool-retro-term>
+
+You can easily install the Cool Retro Term. Just type
 
     sudo dnf install cool-retro-term
