@@ -23,9 +23,10 @@ Adjust these settings accordingly;
 
 1) Select the **Image Source** as *Download automatically*
 2) Select the **Fedora Release** and adjust the **Write Options**
-3) Power OFF
 
     :exclamation: Do not select *Delete download after writing* in Write Options
+
+3) Power OFF
 
 ## Installation
 
@@ -59,10 +60,10 @@ Adjust these settings accordingly;
 ### System Updates
 
 1) Follow the Anaconda Installer
-2) Update your system
+2) After the installation, update your system
 
         sudo dnf upgrade
-3) Wait 15 minutes
+3) :exclamation: Wait 15 minutes
 4) Reboot
 
 ## Post-Installation
@@ -115,8 +116,6 @@ See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-goo
 ### Installing VSCode
 
 See: <https://code.visualstudio.com/docs/setup/linux>
-
-> Clone *linux_black_hole* repository to `~/Desktop/coding`
 
 #### Linking Github and VSCode
 
