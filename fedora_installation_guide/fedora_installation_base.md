@@ -110,8 +110,8 @@ See: <https://code.visualstudio.com/docs/setup/linux>
 
 #### Linking Github and VSCode
 
-    git config --global user.name "seVenVo1d"
     git config --global user.email "arman-cam@windowslive.com"
+    git config --global user.name "seVenVo1d"
 
 ### Middle Step
 
