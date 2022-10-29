@@ -138,3 +138,20 @@ See: <https://docs.fedoraproject.org/en-US/gaming/proton/>
 In order to enable Steam Proton follow these steps
 
     Steam -> Settings -> Steam Play and toggle the option `Enable Steam Play for Supported Titles.
+
+## Cisco Anyconnect
+
+>Cisco VPN adress: vpn.itu.edu.tr
+
+Run
+
+    sudo /opt/cisco/anyconnect/bin/vpnui
+
+If you encounter with an error like this
+
+    /opt/cisco/anyconnect/bin/vpnui: error while loading shared libraries: libgtk-x11-2.0.so.0: cannot open shared object file: No such file or directory
+run
+
+    sudo dnf install libgtk-x11-2.0.so.0
+
+and it should install `gtk2`.
