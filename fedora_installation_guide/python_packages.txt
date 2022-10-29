@@ -1,4 +1,4 @@
-# Important Packages + SimpleMC
+# Important Packages
 
 numpy
 numdifftools
