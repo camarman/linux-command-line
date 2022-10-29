@@ -130,15 +130,6 @@ Install fonts via these commands
     sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Input .
     sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Hasklug .
 
-### Managing Python Packages
-
-#### Installing pip
-
-See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
-
-    python3 -m ensurepip --default-pip
-    python3 -m pip install --upgrade pip setuptools wheel
-
 ### Setting Alias
 
     alias quarks="sudo dnf clean all ; sudo dnf upgrade ; sudo dnf distro-sync ; sudo snap refresh ; sudo dnf autoremove"
@@ -150,6 +141,15 @@ See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
     alias cvenv='python3 -m venv venv/'
     alias avenv='source venv/bin/activate'
     alias scopy='scp -r student@160.75.19.126:~/Arman/SimpleMC/simplemc/chains ~/Desktop/coding/model_analysis'
+
+### Managing Python Packages
+
+#### Installing pip
+
+See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
+
+    python3 -m ensurepip --default-pip
+    python3 -m pip install --upgrade pip setuptools wheel
 
 #### Installing python packages
 
