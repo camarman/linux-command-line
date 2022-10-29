@@ -128,3 +128,13 @@ See: <https://ohmyposh.dev/docs/installation/linux>
 After following the commands, open `.bashrc` and paste
 
     eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"
+
+### Installing Steam and Enabling Steam Proton for gaming
+
+See: <https://docs.fedoraproject.org/en-US/gaming/proton/>
+
+    sudo dnf install steam
+
+In order to enable Steam Proton follow these steps
+
+    Steam -> Settings -> Steam Play and toggle the option `Enable Steam Play for Supported Titles.

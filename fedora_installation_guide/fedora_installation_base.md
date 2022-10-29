@@ -100,6 +100,14 @@ See: <https://rpmfusion.org/Configuration>
     sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
     sudo dnf groupupdate sound-and-video
 
+### Installing Cool Retro Term
+
+See: <https://github.com/Swordfish90/cool-retro-term>
+
+You can easily install the Cool Retro Term. Just type
+
+    sudo dnf install cool-retro-term
+
 ### Installing Chrome
 
 See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/>
@@ -108,14 +116,12 @@ See: <https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-goo
 
 See: <https://code.visualstudio.com/docs/setup/linux>
 
+> Clone *linux_black_hole* repository to `~/Desktop/coding`
+
 #### Linking Github and VSCode
 
     git config --global user.email "arman-cam@windowslive.com"
     git config --global user.name "seVenVo1d"
-
-### Middle Step
-
-Clone `linux_black_hole` repository to `~/Desktop/coding`
 
 ### Installing Fonts
 
@@ -125,14 +131,6 @@ Install fonts via these commands
     sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Input .
     sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Hasklug .
 
-### Installing Cool Retro Term
-
-See: <https://github.com/Swordfish90/cool-retro-term>
-
-You can easily install the Cool Retro Term. Just type
-
-    sudo dnf install cool-retro-term
-
 ### Managing Python Packages
 
 #### Installing pip
@@ -141,6 +139,18 @@ See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
 
     python3 -m ensurepip --default-pip
     python3 -m pip install --upgrade pip setuptools wheel
+
+### Setting Alias
+
+    alias quarks="sudo dnf clean all ; sudo dnf upgrade ; sudo dnf distro-sync ; sudo snap refresh ; sudo dnf autoremove"
+    alias cod="cd ~/Desktop/coding"
+    alias gs="cd ~/Desktop/coding/SimpleMC/"
+    alias mp="module load mpi/openmpi-x86_64"
+    alias logserver="ssh -X student@160.75.19.126"
+    alias vpninfo='less ~/Desktop/server_info'
+    alias cvenv='python3 -m venv venv/'
+    alias avenv='source venv/bin/activate'
+    alias scopy='scp -r student@160.75.19.126:~/Arman/SimpleMC/simplemc/chains ~/Desktop/coding/model_analysis'
 
 #### Installing python packages
 
@@ -154,7 +164,7 @@ See: <https://pip.pypa.io/en/stable/cli/pip_install/?highlight=update#examples>
 
 If you want to update the packages in the `python_packages.txt` type
 
-    python3 -m pip install -r fedora_installation_guide/python_packages.txt --upgrade
+    python3 -m pip install -r python_packages.txt --upgrade
 
 > Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package version.
 
@@ -170,21 +180,15 @@ where `<DIR>` is the name of the virtual environment directory. In order to acti
 
     source <DIR>/bin/activate
 
-### Setting Alias
-
-    alias quarks="sudo dnf clean all ; sudo dnf upgrade ; sudo dnf distro-sync ; sudo snap refresh ; sudo dnf autoremove"
-    alias cod="cd ~/Desktop/coding"
-    alias gs="cd ~/Desktop/coding/SimpleMC/"
-    alias mp="module load mpi/openmpi-x86_64"
-    alias logserver="ssh -X student@160.75.19.126"
-    alias vpninfo='less ~/Desktop/server_info'
-    alias cvenv='python3 -m venv venv/'
-    alias avenv='source venv/bin/activate'
-    alias scopy='scp -r student@160.75.19.126:~/Arman/SimpleMC/simplemc/chains ~/Desktop/coding/model_analysis'
-
 ### Installing Gnome Tweaks
 
     sudo dnf install gnome-tweaks
+
+### Installing Latex Fonts
+
+See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
+
+    sudo dnf install texlive-scheme-full
 
 ### Installing Spotify
 
@@ -195,19 +199,3 @@ See: <https://snapcraft.io/spotify>
 Reboot
 
     sudo snap install spotify
-
-### Installing Steam and Enabling Steam Proton for gaming
-
-See: <https://docs.fedoraproject.org/en-US/gaming/proton/>
-
-    sudo dnf install steam
-
-In order to enable Steam Proton follow these steps
-
-    Steam -> Settings -> Steam Play and toggle the option `Enable Steam Play for Supported Titles.
-
-### Installing Latex Fonts
-
-See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
-
-    sudo dnf install texlive-scheme-full
