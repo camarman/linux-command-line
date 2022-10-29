@@ -121,10 +121,10 @@ For themes, and icons and more see : <https://github.com/daniruiz>
 >
 >**Legacy**: Applications: Flat-Remix-GTK-Magenta-Darkest -- Flat Remix GTK
 
-## Installing Cool Retro Term
+## Installing Oh My Posh
 
-See: <https://github.com/Swordfish90/cool-retro-term>
+See: <https://ohmyposh.dev/docs/installation/linux>
 
-You can easily install the Cool Retro Term. Just type
+After following the commands, open `.bashrc` and paste
 
-    sudo dnf install cool-retro-term
+    eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"

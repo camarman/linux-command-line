@@ -23,6 +23,7 @@ Adjust these settings accordingly;
 
 1) Select the **Image Source** as *Download automatically*
 2) Select the **Fedora Release** and adjust the **Write Options**
+3) Power OFF
 
     :exclamation: Do not select *Delete download after writing* in Write Options
 
@@ -30,12 +31,14 @@ Adjust these settings accordingly;
 
 ### Booting
 
+0) Power ON
 1) Adjust the **Boot Option Priorities** (order of the EFI) from the UEFI Firmware Settings
 2) In the **GNU GRUB** menu, select *Test this media & start Fedora ...*
 
 ### Installing Fedora
 
-1) Install gparted via
+0) Connect to Network
+1) Install `gparted` via
 
         sudo dnf install gparted
 
@@ -50,18 +53,19 @@ Adjust these settings accordingly;
 
     :exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
 
-5) Power Off
+5) Power OFF
 6) Remove USB
 
 ### System Updates
 
-1) Set username & password
+1) Follow the Anaconda Installer
 2) Update your system
 
         sudo dnf upgrade
-3) Wait 7 minutes
+3) Wait 15 minutes
 4) Reboot
-5) Switch to **Xorg**
+
+## Post-Installation
 
 ### Enabling Nvidia
 
@@ -73,18 +77,21 @@ Adjust these settings accordingly;
 
         sudo dnf upgrade --refresh
 3) Reboot
-4) Install [Nvidia and Cuda Support](https://rpmfusion.org/Howto/NVIDIA)
+4) Install [Nvidia](https://rpmfusion.org/Howto/NVIDIA)
 
         sudo dnf install akmod-nvidia
-        sudo dnf install xorg-x11-drv-nvidia-cuda
 
-5) Wait 7 minutes
-6) Check if the drivers are installed
+5) :bangbang: Wait 10 minutes and check the driver status via
 
         modinfo -F version nvidia
-7) Final Reboot
 
-## Post-Installation
+6) Reboot
+7) Install Cuda Support
+
+        sudo dnf install xorg-x11-drv-nvidia-cuda
+
+8) Wait 10 minutes
+9) Reboot
 
 ### Installing Multimedia Support
 
@@ -118,13 +125,13 @@ Install fonts via these commands
     sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Input .
     sudo cp -r ~/Desktop/coding/linux_black_hole/fedora_installation_guide/Hasklug .
 
-### Installing Oh My Posh
+### Installing Cool Retro Term
 
-See: <https://ohmyposh.dev/docs/installation/linux>
+See: <https://github.com/Swordfish90/cool-retro-term>
 
-After following the commands, open `.bashrc` and paste
+You can easily install the Cool Retro Term. Just type
 
-    eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"
+    sudo dnf install cool-retro-term
 
 ### Managing Python Packages
 
