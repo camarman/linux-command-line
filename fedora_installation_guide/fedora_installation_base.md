@@ -17,7 +17,7 @@ Adjust these settings accordingly;
     Secure Boot   [Disabled]
     USB Boot      [Enabled]
 
-> :exclamation:IMPORTANT:Disabling the Secure Boot is optional. However, it is kind of complicated to maintain Linux distributions where the Secure Boot is enabled. You might encounter many errors during the update/upgrade procedures. The safest way to use any Linux distribution (which includes Fedora) is to disable the Secure Boot.
+> :exclamation:IMPORTANT: Disabling the Secure Boot is optional. However, it is kind of complicated to maintain Linux distributions where the Secure Boot is enabled. You might encounter many errors during the update/upgrade procedures. The safest way to use any Linux distribution (which includes Fedora) is to disable the Secure Boot.
 
 ### Fedora Media Writer (FMW)
 
@@ -53,7 +53,7 @@ Adjust these settings accordingly;
 
 1) Follow the **Anaconda Installer**
 
-    :exclamation: In **Installation Destination/Storage Configuration** *Automatic* (i.e., Automatic partitioning)
+    :exclamation: In **Installation Destination/Storage Configuration** select *Automatic* (i.e., Automatic partitioning)
 2) Power OFF
 3) Remove USB
 
