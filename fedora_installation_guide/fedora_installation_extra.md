@@ -12,7 +12,6 @@ If you see this message `Secure Boot dbx Configuration Update` in gnome-software
 
     sudo fwupdmgr refresh ; sudo fwupdmgr get-updates
     sudo fwupdmgr update
-
 After the update, check the lines by running `dbxtool -l`.
 
 If you encounter `tpm.c:148: Unknown TPM error` while trying to start the Fedora, you can try to disable the Secure Boot (*if it is enabled*). Also, ASUS seems to have problems with the `fwupdmgr.`
@@ -81,7 +80,6 @@ See: <https://help.ubuntu.com/community/KVM/Installation>
 To see if your processor supports Intel VT-x, you can review the output of this command:
 
     egrep -c '(vmx|svm)' /proc/cpuinfo
-
 If returns `0` it means that your CPU **doesn't** support hardware virtualization.
 
 If returns `1` or more it means that your CPU **does** support hardware virtualization. (But you still need to make sure that virtualization is enabled in the BIOS).
@@ -102,11 +100,9 @@ See: <https://docs.fedoraproject.org/en-US/quick-docs/gnome-shell-extensions/>
 Install the gnome extensions app via
 
     sudo dnf install gnome-extensions-app
-
 and then type
 
     sudo dnf install chrome-gnome-shell
-
 Best Extension:
 
 >**Manually Installed**: Blur my Shell, Caffeine, User Themes, Vitals
@@ -121,7 +117,7 @@ For themes, and icons and more see : <https://github.com/daniruiz>
 >
 >**Legacy**: Applications: Flat-Remix-GTK-Magenta-Darkest -- Flat Remix GTK
 
-:exclamation: In order to download the themes go to the desired repo and replace `.com` with `.dev`. Then download the folder to `/home/<username>/Templates`.
+:exclamation: In order to download the themes go to the desired repo and replace `.com` with `.dev`. Then download the folder to `~/Templates`.
 
 ## Installing Oh My Posh
 
@@ -136,24 +132,19 @@ After following the commands, open `.bashrc` and paste
 See: <https://docs.fedoraproject.org/en-US/gaming/proton/>
 
     sudo dnf install steam
-
 In order to enable Steam Proton follow these steps
 
     Steam -> Settings -> Steam Play and toggle the option `Enable Steam Play for Supported Titles.
 
 ## Cisco Anyconnect
 
->Cisco VPN adress: vpn.itu.edu.tr
-
-Run
+Follow the usual steps from the ITU page. Later on, run the program via
 
     sudo /opt/cisco/anyconnect/bin/vpnui
-
-If you encounter with an error like this
+If you encounter with this error
 
     /opt/cisco/anyconnect/bin/vpnui: error while loading shared libraries: libgtk-x11-2.0.so.0: cannot open shared object file: No such file or directory
 run
 
     sudo dnf install libgtk-x11-2.0.so.0
-
-and it should install `gtk2`.
+and it should install `gtk2`. After this, you can run VPN without any problem.

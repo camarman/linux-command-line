@@ -6,9 +6,9 @@ Fedora installation guide, including unique tweaks and settings
 
 ### UEFI Firmware Settings
 
-> :exclamation: Learn the key-binding that opens the UEFI Firmware Settings
-
-Aras' Computer & My Computer: F2
+>:exclamation: Learn the key-binding that opens the UEFI Firmware settings
+>
+>Aras's Computer & My Computer: F2
 
 Adjust these settings accordingly;
 
@@ -17,50 +17,50 @@ Adjust these settings accordingly;
     Secure Boot   [Disabled]
     USB Boot      [Enabled]
 
-> IMPORTANT: Disabling the Secure Boot is optional. However, it is kind of complicated to maintain Linux distributions where the Secure Boot is enabled. You might encounter many errors during the update/upgrade procedures. The safest way to use any Linux distribution (which includes Fedora) is to disable the Secure Boot.
+> IMPORTANT :exclamation: :Disabling the Secure Boot is optional. However, it is kind of complicated to maintain Linux distributions where the Secure Boot is enabled. You might encounter many errors during the update/upgrade procedures. The safest way to use any Linux distribution (which includes Fedora) is to disable the Secure Boot.
 
 ### Fedora Media Writer (FMW)
 
 1) Select the **Image Source** as *Download automatically*
 2) Select the **Fedora Release** and adjust the **Write Options**
 
-    :exclamation: Do not select *Delete download after writing* in Write Options
-
+    :exclamation: Do not select *Delete download after writing* in **Write Options**
 3) Power OFF
 
 ## Installation
 
 ### Booting
 
-0) Power ON
-1) Adjust the **Boot Option Priorities** (order of the EFI) from the UEFI Firmware Settings
-2) In the **GNU GRUB** menu, select *Test this media & start Fedora ...*
+1) Power ON
+2) Adjust the **Boot Option Priorities** (order of the EFI) from the UEFI Firmware settings
+3) In the **GNU GRUB** menu, select *Test this media & start Fedora ...*
 
 ### Installing Fedora
 
-0) Connect to Network
+#### Partitioning
+
 1) Install `gparted` via
 
         sudo dnf install gparted
-
 2) Adjust partitions
 
-    Delete **ext4** and **btrfs** (fedora_localhost-live/main partition)
+    Delete **ext4 (fedora_localhost-live)** and **btrfs (main partition)**
 
     :bangbang: **DO NOT DELETE EFI** :bangbang:
-
 3) Reboot
-4) Install Fedora to Hard Drive
 
-    :exclamation: Select *Automatic* in **Installation Destination/Storage Configuration** (i.e., Automatic partitioning)
+#### Installing Fedora to Hard Drive
 
-5) Power OFF
-6) Remove USB
+1) Follow the **Anaconda Installer**
+
+    :exclamation: In **Installation Destination/Storage Configuration** *Automatic* (i.e., Automatic partitioning)
+2) Power OFF
+3) Remove USB
 
 ### System Updates
 
-1) Follow the Anaconda Installer
-2) After the installation, update your system
+1) Power ON
+2) Upgrade your system via
 
         sudo dnf upgrade
 3) :exclamation: Wait 15 minutes
@@ -73,7 +73,6 @@ Adjust these settings accordingly;
 1) Install [Free and Nonfree RPM Repositories](https://rpmfusion.org/Configuration)
 
         sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
 2) Update your system
 
         sudo dnf upgrade --refresh
@@ -81,25 +80,15 @@ Adjust these settings accordingly;
 4) Install [Nvidia](https://rpmfusion.org/Howto/NVIDIA)
 
         sudo dnf install akmod-nvidia
-
 5) :bangbang: Wait 10 minutes and check the driver status via
 
         modinfo -F version nvidia
-
 6) Reboot
 7) Install Cuda Support
 
         sudo dnf install xorg-x11-drv-nvidia-cuda
-
 8) Wait 10 minutes
 9) Reboot
-
-### Installing Multimedia Support
-
-See: <https://rpmfusion.org/Configuration>
-
-    sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-    sudo dnf groupupdate sound-and-video
 
 ### Installing Cool Retro Term
 
@@ -108,6 +97,13 @@ See: <https://github.com/Swordfish90/cool-retro-term>
 You can easily install the Cool Retro Term. Just type
 
     sudo dnf install cool-retro-term
+
+### Installing Multimedia Support
+
+See: <https://rpmfusion.org/Configuration>
+
+    sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+    sudo dnf groupupdate sound-and-video
 
 ### Installing Chrome
 
@@ -140,7 +136,6 @@ Install fonts via these commands
     alias vpninfo='less ~/Desktop/server_info'
     alias cvenv='python3 -m venv venv/'
     alias avenv='source venv/bin/activate'
-    alias scopy='scp -r student@160.75.19.126:~/Arman/SimpleMC/simplemc/chains ~/Desktop/coding/model_analysis'
 
 ### Managing Python Packages
 
@@ -160,12 +155,11 @@ See: <https://packaging.python.org/en/latest/tutorials/installing-packages/>
 See: <https://pip.pypa.io/en/stable/cli/pip_install/?highlight=update#examples>
 
     python3 -m pip install --upgrade SomePackage
-
 If you want to update the packages in the `python_packages.txt` type
 
     python3 -m pip install -r python_packages.txt --upgrade
 
-> Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package version.
+> :exclamation: Do not update every python package. Updating everything might cause system failure/crashes since they might conflict with the Fedora OS's python package version.
 
 #### Creating Virtual Environments
 
@@ -174,7 +168,6 @@ See: <https://packaging.python.org/en/latest/tutorials/installing-packages/#crea
 In order create a virtual environment, type
 
     python3 -m venv <DIR>
-
 where `<DIR>` is the name of the virtual environment directory. In order to activate the virtual environment type
 
     source <DIR>/bin/activate
@@ -194,7 +187,6 @@ See: <https://docs.fedoraproject.org/en-US/neurofedora/latex/>
 See: <https://snapcraft.io/spotify>
 
     sudo dnf install snapd
-
 Reboot
 
     sudo snap install spotify
@@ -204,5 +196,4 @@ Reboot
 In order to set the root user password type
 
     sudo passwd root
-
 Later on enter the desired root password
