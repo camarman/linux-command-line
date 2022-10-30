@@ -198,3 +198,11 @@ See: <https://snapcraft.io/spotify>
 Reboot
 
     sudo snap install spotify
+
+### Setting Root User Password
+
+In order to set the root user password type
+
+    sudo passwd root
+
+Later on enter the desired root password

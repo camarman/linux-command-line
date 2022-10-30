@@ -13,3 +13,4 @@ tqdm
 pandas
 jupyterlab
 sympy
+uncertainties

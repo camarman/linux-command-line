@@ -121,6 +121,8 @@ For themes, and icons and more see : <https://github.com/daniruiz>
 >
 >**Legacy**: Applications: Flat-Remix-GTK-Magenta-Darkest -- Flat Remix GTK
 
+:exclamation: In order to download the themes go to the desired repo and replace `.com` with `.dev`. Then download the folder to `/home/<username>/Templates`.
+
 ## Installing Oh My Posh
 
 See: <https://ohmyposh.dev/docs/installation/linux>
@@ -129,7 +131,7 @@ After following the commands, open `.bashrc` and paste
 
     eval "$(oh-my-posh init bash --config ~/.poshthemes/thecyberden.omp.json)"
 
-### Installing Steam and Enabling Steam Proton for gaming
+## Installing Steam and Enabling Steam Proton for gaming
 
 See: <https://docs.fedoraproject.org/en-US/gaming/proton/>
 
