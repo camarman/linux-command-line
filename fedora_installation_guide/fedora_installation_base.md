@@ -80,21 +80,19 @@ Adjust these settings accordingly;
 4) Install [Nvidia](https://rpmfusion.org/Howto/NVIDIA)
 
         sudo dnf install akmod-nvidia
-5) :bangbang: Wait 10 minutes and check the driver status via
+5) :exclamation: Wait 10 minutes and check the driver status via
 
         modinfo -F version nvidia
 6) Reboot
 7) Install Cuda Support
 
         sudo dnf install xorg-x11-drv-nvidia-cuda
-8) Wait 10 minutes
+8) :exclamation: Wait 10 minutes
 9) Reboot
 
 ### Installing Cool Retro Term
 
 See: <https://github.com/Swordfish90/cool-retro-term>
-
-You can easily install the Cool Retro Term. Just type
 
     sudo dnf install cool-retro-term
 
@@ -193,7 +191,7 @@ Reboot
 
 ### Setting Root User Password
 
-In order to set the root user password type
+In order to set the root user password run
 
     sudo passwd root
 Later on enter the desired root password
