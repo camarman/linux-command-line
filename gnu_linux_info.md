@@ -54,11 +54,3 @@ Such as BASH, GCC, EMACS, NANO etc. See the full list from:
 5) Suicide Linux
 6) Tails
 7) TempleOS
-
-## Distro Information
-
-### openSUSE Tumbleweed
-
-Upgrading information
-
-<https://en.opensuse.org/SDB:Upgrade_Tumbleweed>
