@@ -1,9 +1,17 @@
 # openSUSE Tumbleweed
 
-Upgrading information
+## Documentation
 
-<https://en.opensuse.org/SDB:Upgrade_Tumbleweed>
+See: <https://github.com/openSUSE/openSUSE-docs-revamped-temp>
 
-For documentation see:
+See: <https://en.opensuse.org/SDB:Upgrade_Tumbleweed>
 
-<https://doc.opensuse.org/>
+See: <https://doc.opensuse.org/>
+
+See: <https://en.opensuse.org/Portal:Support_database>
+
+## Important steps
+
+After installation set hostname
+
+    hostnamectl set-hostname <HOSTNAME> --static
