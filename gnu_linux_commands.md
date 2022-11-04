@@ -4,7 +4,9 @@ Some useful commands that I have learned from TLCL (The Linux Command Line)
 
 <https://linuxcommand.org/tlcl.php>
 
-## Simple Commands
+## 1) What is Shell?
+
+### Some simple commands
 
 > Use `man`, `info` or `help` commands to get an information about the command
 
@@ -16,7 +18,7 @@ Some useful commands that I have learned from TLCL (The Linux Command Line)
 
 `free -ht --si` : shows the status of the memory
 
-## Navigation
+## 2) Navigation
 
 `pwd` : prints the name of the current working directory
 
@@ -31,7 +33,9 @@ Some useful commands that I have learned from TLCL (The Linux Command Line)
 >
 >`cd ~` : go to home directory
 
-`ls` : lists the content of the directory.
+## 3) Exploring the System
+
+`ls` : lists the content ## Navigationof the directory.
 >`ls -l` : long format
 >
 >`ls -a` : shows hidden files
@@ -56,7 +60,7 @@ In the most general case the commands has
     command -options arguments
 type of structure
 
-## Manipulating Files and Directories
+## 4) Manipulating Files and Directories
 
 `cp` : copy files and directories
 
@@ -70,7 +74,9 @@ type of structure
 
 You can also look at wildcards if necessary
 
-## I/O Redirection
+## 6) Redirection
+
+### Standard Input, Output, and Error
 
 Shell file descriptors;
 
@@ -107,7 +113,7 @@ If you don't want to display the error or write it to a file, you can send to a 
 
     ls -lh /usr/bin 2> /dev/null
 
-## Pipeline
+### Pipeline
 
 We can use pipeline `|` to direct from stdout to stdin. This is very useful in some cases, such as;
 
@@ -133,11 +139,9 @@ Some useful filters: `sort`, `uniq`, `wc`, `grep`, `head -n #` , `tail -n #`, `e
 
 close this use `CTRL+C`.
 
-## echo
+## 7) Seeing the World as the Shell Sees It
 
-### Expansions
-
-#### Pathname Expansion
+### Pathname Expansion
 
 To search in terms of wildcards in terminal use `echo`. For instance
 
@@ -145,13 +149,13 @@ To search in terms of wildcards in terminal use `echo`. For instance
 
 will print the folders or files that ends with "s", in the current directory.
 
-#### Arithmetic Expansion
+### Arithmetic Expansion
 
 `echo` can be used to do mathematical calculations in the terminal. Such as:
 
     echo $((expression))
 
-#### Brace Expansion
+### Brace Expansion
 
     [me@linuxbox ~]$ echo Number_{1..5}
     Number_1 Number_2 Number_3 Number_4 Number_5
@@ -177,17 +181,110 @@ or most importantly it can be used to create folders and files such as:
     2007-05 2007-11 2008-05 2008-11 2009-05 2009-11
     2007-06 2007-12 2008-06 2008-12 2009-06 2009-12
 
-#### Parameter Expansion
+### Parameter Expansion
 
 `printenv | less` : lists the all environment variables
 
 There is also quoting. Look Chapter 7 for more information.
 
-## Searching History
+## 8) Advanced Keyboard Tricks
+
+### Searching History
 
 `history | less` : shows the history in the terminal
 
 There is also some good discussion about running a command from the history.
 
 `!!` : run the previous command
+
 `!#` : repeat history list item number.
+
+## 9) Permissions
+
+### File attributes
+
+    - | --- | --- | ---
+    d | rw- | rw- | rw-
+
+#### File type
+
+File type is the first element in the file attributes
+
+`-` : regular file
+`d` : directory
+`l` : symbolic link
+`c` : character special file (such as /dev/null)
+`b` : block special file (such as hard drive or DVD drive)
+
+#### File mode
+
+File mode is the other 9 elements which represents owners, groups and worlds read, write and execute permissions.
+
+    Octal   Binary   File Mode
+    0        000        ---
+    1        001        --x
+    2        010        -w-
+    3        011        -wx
+    4        100        r--
+    5        101        r-x
+    6        110        rw-
+    7        111        rwx
+
+By using the octal representation, we can change the file mode. Such as
+
+    [me@linuxbox ~]$ > foo.txt
+    [me@linuxbox ~]$ ls -l foo.txt
+    -rw-rw-r-- 1 me me 0 2016-03-06 14:52 foo.txt
+    [me@linuxbox ~]$ chmod 600 foo.txt
+    [me@linuxbox ~]$ ls -l foo.txt
+    -rw------- 1 me me 0 2016-03-06 14:52 foo.txt
+
+where `600` implies `rw- | --- | ---`
+
+Instead of using octal representation, we can use the symbolic representation. See table 9-5 for more detail but the most seen `u+x` represents add execute permission for the owner.
+
+There is also some discussion about `umask`.
+
+### Changing Your Password
+
+In order to change the root password type:
+
+    sudo passwd root
+
+see also `adduser`, `useradd` and `groupadd`
+
+## 10) Processes
+
+### How a Process Works
+
+Initially, the linux kernel starts a program called `init`. Later on `init` launches a series of shell scripts (called *init scripts*), which are located in `/etc`.
+
+### Viewing Processes
+
+`ps` : view processes
+
+    [carman@fedora ~]$ ps x
+        PID TTY      STAT   TIME COMMAND
+    1797 ?        Ss     0:01 /usr/lib/systemd/systemd --user
+    1808 ?        S      0:00 (sd-pam)
+    1828 ?        Sl     0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+    1834 tty2     Ssl+   0:00 /usr/libexec/gdm-wayland-session /usr/bin/gnome-session
+    1837 ?        Ss     0:00 /usr/bin/dbus-broker-launch --scope user
+
+`TTY/tty` : short for *teletype* and refers to the controlling terminal for the process.
+
+`TIME` : amount of CPU time consumed by the process.
+
+`STATE` : represents the state of the process
+
+    State Meanings
+    R -> *Running* :  This means that the process is running or ready to run.
+    S -> *Sleeping* : The process is not running; rather, it is waiting for an event, such as a keystroke or network packet.
+    D -> *Uninterruptible sleep* : The process is waiting for I/O such as a disk drive.
+    T -> *Stopped* : The process has been instructed to stop.
+    Z -> *A defunct or “zombie” process* : This is a child process that has terminated but has not been cleaned up by its parent.
+
+`top`: shows the system information
+
+### Controlling Processes
+
