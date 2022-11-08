@@ -12,6 +12,6 @@ See: <https://en.opensuse.org/Portal:Support_database>
 
 ## Important steps
 
-After installation set hostname
+After installation set the hostname
 
     hostnamectl set-hostname <HOSTNAME> --static

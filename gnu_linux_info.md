@@ -1,43 +1,43 @@
 # GNU/Linux
 
+GNU stands for *GNU's Not Unix*
+
 GNU is the operating system itself. Linux is just the kernel.
-GNU: GNU's Not Unix
 
 Read:
 
-<https://www.gnu.org/gnu/about-gnu.en.html>
+    <https://www.gnu.org/gnu/about-gnu.en.html>
 
-<https://www.gnu.org/gnu/linux-and-gnu.en.html>
+    <https://www.gnu.org/gnu/linux-and-gnu.en.html>
 
-<https://www.gnu.org/gnu/gnu-history.en.html>
+    <https://www.gnu.org/gnu/gnu-history.en.html>
 
-<https://www.gnu.org/gnu/gnu-linux-faq.en.html>
+    <https://www.gnu.org/gnu/gnu-linux-faq.en.html>
 
-GNU created the essential parts of the operating systems, which that was the intention.
-Such as BASH, GCC, EMACS, NANO etc. See the full list from:
+GNU creates the essential parts of the operating system such as bash, gcc, emacs, nano etc. See the full list from:
 
-<https://www.gnu.org/software/software.en.html#allgnupkgs>
+    <https://www.gnu.org/software/software.en.html#allgnupkgs>
 
 ## Must Try Distros
 
 ### Already tried
 
 1) openSUSE
+2) Ubuntu
 
 ### Waiting
 
 #### GNU/Linux OS's
 
-1) Ubuntu
-2) Debian
-3) EndeavourOS
-4) RHEL
-5) Arch
-6) Gentoo
-7) Slackware
-8) Qubes OS
-9) Nix OS
-10) Void OS
+1) Debian
+2) EndeavourOS
+3) RHEL
+4) Arch
+5) Gentoo
+6) Slackware
+7) Qubes OS
+8) Nix OS
+9) Void OS
 
 #### BSD
 

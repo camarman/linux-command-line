@@ -287,4 +287,3 @@ Initially, the linux kernel starts a program called `init`. Later on `init` laun
 `top`: shows the system information
 
 ### Controlling Processes
-
