@@ -4,19 +4,17 @@ GNU stands for *GNU's Not Unix*
 
 GNU is the operating system itself. Linux is just the kernel.
 
-Read:
+See: <https://www.gnu.org/gnu/about-gnu.en.html>
 
-    <https://www.gnu.org/gnu/about-gnu.en.html>
+See: <https://www.gnu.org/gnu/linux-and-gnu.en.html>
 
-    <https://www.gnu.org/gnu/linux-and-gnu.en.html>
+See: <https://www.gnu.org/gnu/gnu-history.en.html>
 
-    <https://www.gnu.org/gnu/gnu-history.en.html>
+See: <https://www.gnu.org/gnu/gnu-linux-faq.en.html>
 
-    <https://www.gnu.org/gnu/gnu-linux-faq.en.html>
+GNU creates the essential parts of the operating system such as bash, gcc, emacs, nano etc.
 
-GNU creates the essential parts of the operating system such as bash, gcc, emacs, nano etc. See the full list from:
-
-    <https://www.gnu.org/software/software.en.html#allgnupkgs>
+See the full list from: <https://www.gnu.org/software/software.en.html#allgnupkgs>
 
 ## Must Try Distros
 
