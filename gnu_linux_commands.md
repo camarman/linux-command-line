@@ -18,6 +18,8 @@ Some useful commands that I have learned from TLCL (The Linux Command Line)
 
 `free -ht --si` : shows the status of the memory
 
+`diff` : shows the difference between two files
+
 ## 2) Navigation
 
 `pwd` : prints the name of the current working directory
@@ -137,7 +139,7 @@ Some useful filters: `sort`, `uniq`, `wc`, `grep`, `head -n #` , `tail -n #`, `e
 
     tail -f /var/log/kern.log
 
-close this use `CTRL+C`.
+to close press `CTRL+C`.
 
 ## 7) Seeing the World as the Shell Sees It
 
@@ -287,3 +289,39 @@ Initially, the linux kernel starts a program called `init`. Later on `init` laun
 `top`: shows the system information
 
 ### Controlling Processes
+
+To put a process in the background use `&`.
+
+    command &
+
+By using `jobs` we can see the running processes in the background, in that terminal session.
+
+In order the bring the running process to foreground run
+
+    fg %[ID]
+where [ID] is obtained from the `jobs`.
+
+If you want to send the process to the bacground and run even when the terminal closes use,
+
+    nohup command &
+
+To kill a process, first we need to obtain the *PID* of the process. *PID* is provided when we run the above command or we can also learn it from
+
+    ps -ef | grep [COMMAND_CHAR]
+
+after getting the ID type
+
+    kill -9 [PID]
+
+More commands can be found in the book.
+
+#### Shutting Down the System
+
+There are four commands that can perform this function. They are halt, poweroff, reboot, and shutdown.
+
+To reboot with time option run
+
+    sudo shutdown -r [hh:mm]
+To shutdown the computer run
+
+    sudo shutdown
