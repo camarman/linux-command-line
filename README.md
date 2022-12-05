@@ -37,7 +37,7 @@ Some useful commands that I have learned from TLCL (The Linux Command Line)
 
 ## 3) Exploring the System
 
-`ls` : lists the content ## Navigationof the directory.
+`ls` : lists the content of the directory.
 >`ls -l` : long format
 >
 >`ls -a` : shows hidden files
