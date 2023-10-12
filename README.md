@@ -2,8 +2,6 @@
 
 Some useful commands that I have learned from TLCL (The Linux Command Line)
 
-<https://linuxcommand.org/tlcl.php>
-
 ## 1) What is Shell?
 
 ### Some simple commands
